@@ -38,13 +38,13 @@ public class ScenarioParser {
                 })) throw new IllegalArgumentException();
 
                 return words;
-            }).forEach(word -> weatherTower.register(aircraftFactory.newAircraft(
+            }).forEach(word -> aircraftFactory.newAircraft(
                             word[0],
                             word[1],
                             new Coordinates(Integer.parseInt(word[2]),
                                     Integer.parseInt(word[3]),
                                     Integer.parseInt(word[4]))
-                    ))
+                    ).registerTower(weatherTower)
             );
         } catch (Exception e) {
             throw new ScenarioFileException(e, e.getClass().getSimpleName());

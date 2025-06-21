@@ -19,6 +19,7 @@ public class Aircraft extends Flyable {
     @Override
     public void
     registerTower(WeatherTower weatherTower) {
+        weatherTower.register(this);
     }
 
     public Coordinates
