@@ -3,15 +3,15 @@ package io.github.aalvarez.avaj.launcher.exception;
 import java.util.IllegalFormatException;
 import java.util.Map;
 
-import static io.github.aalvarez.avaj.launcher.exception.WeatherTowerException.DefaultMessages.UNKNOWN_ERROR_DEFAULT_MSG;
+import static io.github.aalvarez.avaj.launcher.exception.WeatherException.DefaultMessages.UNKNOWN_ERROR_DEFAULT_MSG;
 
-public class WeatherTowerException extends RuntimeException {
+public class WeatherException extends RuntimeException {
     public enum
     DefaultMessages {
         ILLEGAL_FORMAT_EXCEPTION_DEFAULT_MSG("Illegal format while registering aircraft to weather tower"),
         ILLEGAL_ARGUMENT_EXCEPTION_DEFAULT_MSG("Illegal argument while registering aircraft to weather tower"),
-        UNKNOWN_ERROR_DEFAULT_MSG("Unknown error while registering aircraft to weather tower"),
-        ;
+        ILLEGAL_STATE_EXCEPTION_DEFAULT_MSG("Illegal state while retrieving current weather from weather tower"),
+        UNKNOWN_ERROR_DEFAULT_MSG("Unknown error while registering aircraft to weather tower");
 
         private final String value;
 
@@ -25,11 +25,11 @@ public class WeatherTowerException extends RuntimeException {
             IllegalArgumentException.class.getSimpleName(), DefaultMessages.ILLEGAL_ARGUMENT_EXCEPTION_DEFAULT_MSG.value
     );
 
-    public WeatherTowerException(String exceptionName) {
+    public WeatherException(String exceptionName) {
         super(exceptionMessagesMap.getOrDefault(exceptionName, UNKNOWN_ERROR_DEFAULT_MSG.value));
     }
 
-    public WeatherTowerException(Throwable cause, String exceptionName) {
+    public WeatherException(Throwable cause, String exceptionName) {
         super(exceptionMessagesMap.getOrDefault(exceptionName, UNKNOWN_ERROR_DEFAULT_MSG.value), cause);
     }
 }

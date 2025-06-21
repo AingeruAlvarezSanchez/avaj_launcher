@@ -1,6 +1,6 @@
 package io.github.aalvarez.avaj.launcher;
 
-import io.github.aalvarez.avaj.launcher.exception.WeatherTowerException;
+import io.github.aalvarez.avaj.launcher.exception.WeatherException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Tower {
         if (p_flyable instanceof Aircraft aircraft) {
             if (observers.stream().anyMatch(f ->
                     ((Aircraft) f).name.equals(aircraft.name))
-            ) throw new WeatherTowerException(IllegalArgumentException.class.getSimpleName());
+            ) throw new WeatherException(IllegalArgumentException.class.getSimpleName());
 
             switch (aircraft) {
                 case Balloon balloon ->
@@ -43,7 +43,7 @@ public class Tower {
                         logger.info(createFlyableRegisteredMsg(jetPlane.getClass().getSimpleName(), jetPlane.name, jetPlane.id));
                 default -> {
                     logger.severe(DefaultMessages.NON_VALID_AIRCRAFT_REGISTERED_DEFAULT_MSG.value + p_flyable.getClass().getName());
-                    throw new WeatherTowerException(IllegalArgumentException.class.getSimpleName());
+                    throw new WeatherException(IllegalArgumentException.class.getSimpleName());
                 }
             }
             observers.add(p_flyable);
