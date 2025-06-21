@@ -57,4 +57,9 @@ public class Tower {
     protected void
     conditionChanged() {
     }
+
+    public List<Flyable>
+    getObservers() {
+        return observers;
+    }
 }

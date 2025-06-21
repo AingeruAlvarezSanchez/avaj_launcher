@@ -20,4 +20,9 @@ public class Aircraft extends Flyable {
     public void
     registerTower(WeatherTower weatherTower) {
     }
+
+    public Coordinates
+    getCoordinates() {
+        return coordinates;
+    }
 }
