@@ -7,12 +7,16 @@ public class Main {
     public static void
     main(String[] args) {
         Scenario scenario = ScenarioParser.parseScenario(Path.of(args[0]));
-        IntStream.range(0, scenario.getSimulations()).forEach(_ -> {
-            scenario.getWeatherTower().getObservers().forEach(observer -> {
-                if (observer instanceof Aircraft aircraft) {
-                    System.out.println("Current weather: " + scenario.getWeatherTower().getWeather(aircraft.getCoordinates()));
-                }
-            });
-        });
+        IntStream.range(0, scenario.getSimulations()).forEach(_ -> scenario.getWeatherTower().getObservers()
+                .forEach(observer -> {
+                    if (observer instanceof Balloon balloon) {
+                        balloon.updateConditions();
+                    } else if (observer instanceof Helicopter helicopter) {
+                        helicopter.updateConditions();
+                    } else if (observer instanceof JetPlane jetPlane) {
+                        jetPlane.updateConditions();
+                    }
+                })
+        );
     }
 }

@@ -1,7 +1,7 @@
 package io.github.aalvarez.avaj.launcher;
 
 public abstract class Flyable {
-    protected WeatherTower weatherTower;
+    protected WeatherTower weatherTower = new WeatherTower();
 
     public abstract void
     updateConditions();
