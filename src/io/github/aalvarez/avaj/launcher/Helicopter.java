@@ -7,10 +7,10 @@ public class Helicopter extends Aircraft {
 
     public enum
     DefaultMessages {
-        SUN("It's a sunny day!"),
-        RAIN("It's raining, but we can still fly."),
-        FOG("Visibility is low, be cautious!"),
-        SNOW("Snow is falling, we need to be careful with the weight.");
+        SUN("Sunny? Perfect for showing off those rotor skills!"),
+        RAIN("Rain? More like nature’s car wash for helicopters!"),
+        FOG("Fog? No worries, we hover like pros!"),
+        SNOW("Snow? Just don’t eat the white stuff off the rotor…");
 
         private final String message;
 
@@ -28,20 +28,20 @@ public class Helicopter extends Aircraft {
         WeatherProvider.Weathers currentWeather = WeatherProvider.Weathers.valueOf(weatherTower.getWeather(getCoordinates()));
         switch (currentWeather) {
             case SUN -> {
-                log.info(DefaultMessages.SUN.message);
+                log.info("Helicopter#" + name + "(" + id + ")" + DefaultMessages.SUN.message);
                 getCoordinates().setLongitude(getCoordinates().getLongitude() + 10);
                 getCoordinates().setHeight(getCoordinates().getHeight() + 2);
             }
             case RAIN -> {
-                log.info(DefaultMessages.RAIN.message);
+                log.info("Helicopter#" + name + "(" + id + ")" + DefaultMessages.RAIN.message);
                 getCoordinates().setLongitude(getCoordinates().getLongitude() + 5);
             }
             case FOG -> {
-                log.info(DefaultMessages.FOG.message);
+                log.info("Helicopter#" + name + "(" + id + ")" + DefaultMessages.FOG.message);
                 getCoordinates().setLongitude(getCoordinates().getLongitude() + 1);
             }
             case SNOW -> {
-                log.info(DefaultMessages.SNOW.message);
+                log.info("Helicopter#" + name + "(" + id + ")" + DefaultMessages.SNOW.message);
                 getCoordinates().setHeight(getCoordinates().getHeight() - 12);
             }
         }

@@ -14,18 +14,8 @@ public class Scenario {
         return simulations;
     }
 
-    public void
-    setSimulations(int simulations) {
-        this.simulations = simulations;
-    }
-
     public WeatherTower
     getWeatherTower() {
         return weatherTower;
-    }
-
-    public void
-    setWeatherTower(WeatherTower weatherTower) {
-        this.weatherTower = weatherTower;
     }
 }

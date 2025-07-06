@@ -7,10 +7,10 @@ public class Balloon extends Aircraft {
 
     public enum
     DefaultMessages {
-        SUN("It's a sunny day!"),
-        RAIN("It's raining, but we can still fly."),
-        FOG("Visibility is low, be cautious!"),
-        SNOW("Snow is falling, we need to be careful with the weight.");
+        SUN("It's a sunny day — don’t forget the sunscreen!"),
+        RAIN("It's raining, but hey, free water refill!"),
+        FOG("Visibility is low — hope we don’t meet any birds!"),
+        SNOW("Snow is falling — hope we don’t pop from the chill!");
 
         private final String message;
 
@@ -28,20 +28,20 @@ public class Balloon extends Aircraft {
         WeatherProvider.Weathers currentWeather = WeatherProvider.Weathers.valueOf(weatherTower.getWeather(coordinates));
         switch (currentWeather) {
             case SUN -> {
-                log.info(DefaultMessages.SUN.message);
+                log.info("Balloon#" + name + "(" + id + ")" + DefaultMessages.SUN.message);
                 getCoordinates().setLatitude(getCoordinates().getLongitude() + 2);
                 getCoordinates().setHeight(getCoordinates().getHeight() + 4);
             }
             case RAIN -> {
-                log.info(DefaultMessages.RAIN.message);
+                log.info("Balloon#" + name + "(" + id + ")" + DefaultMessages.RAIN.message);
                 getCoordinates().setHeight(getCoordinates().getHeight() - 5);
             }
             case FOG -> {
-                log.info(DefaultMessages.FOG.message);
+                log.info("Balloon#" + name + "(" + id + ")" + DefaultMessages.FOG.message);
                 getCoordinates().setHeight(getCoordinates().getHeight() - 3);
             }
             case SNOW -> {
-                log.info(DefaultMessages.SNOW.message);
+                log.info("Balloon#" + name + "(" + id + ")" + DefaultMessages.SNOW.message);
                 getCoordinates().setHeight(getCoordinates().getHeight() - 15);
             }
         }
