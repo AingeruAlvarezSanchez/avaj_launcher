@@ -33,7 +33,7 @@ public class ScenarioParser {
 
                 if (IntStream.rangeClosed(2, 4).anyMatch(i -> {
                     try {
-                        return Integer.parseInt(words[i]) <= 0 || (i == 2 && Integer.parseInt(words[i]) > 100);
+                        return Integer.parseInt(words[i]) <= 0 || (i == 4 && Integer.parseInt(words[i]) > 100);
                     } catch (NumberFormatException e) {
                         return true;
                     }
@@ -49,7 +49,6 @@ public class ScenarioParser {
                     ).registerTower(weatherTower)
             );
         } catch (Exception e) {
-            System.out.println("exception: " + e);
             throw new ScenarioFileException(e, e.getClass().getSimpleName());
         }
 
