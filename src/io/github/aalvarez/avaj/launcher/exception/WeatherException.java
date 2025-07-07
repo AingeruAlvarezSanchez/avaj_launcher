@@ -9,7 +9,7 @@ public class WeatherException extends RuntimeException {
     public enum
     DefaultMessages {
         ILLEGAL_FORMAT_EXCEPTION_DEFAULT_MSG("Illegal format while registering aircraft to weather tower"),
-        ILLEGAL_ARGUMENT_EXCEPTION_DEFAULT_MSG("Illegal argument while registering aircraft to weather tower"),
+        ILLEGAL_ARGUMENT_EXCEPTION_DEFAULT_MSG("Illegal argument while trying to register or unregister an aircraft to weather tower"),
         ILLEGAL_STATE_EXCEPTION_DEFAULT_MSG("Illegal state while retrieving current weather from weather tower"),
         UNKNOWN_ERROR_DEFAULT_MSG("Unknown error while registering aircraft to weather tower");
 

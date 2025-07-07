@@ -60,7 +60,7 @@ public class Tower {
     public void
     unregister(Flyable p_flyable) {
         if (p_flyable instanceof Aircraft aircraft) {
-            if (observers.stream().anyMatch(f ->
+            if (observers.stream().noneMatch(f ->
                     ((Aircraft) f).name.equals(aircraft.name))
             ) throw new WeatherException(IllegalArgumentException.class.getSimpleName());
 
@@ -83,7 +83,7 @@ public class Tower {
 
     protected void
     conditionChanged() {
-        observers.forEach(Flyable::updateConditions);
+        new ArrayList<>(observers).forEach(Flyable::updateConditions);
     }
 
     public List<Flyable>

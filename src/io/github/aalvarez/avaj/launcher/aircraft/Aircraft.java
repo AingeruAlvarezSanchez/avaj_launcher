@@ -24,6 +24,7 @@ public class Aircraft extends Flyable {
     @Override
     public void
     registerTower(WeatherTower weatherTower) {
+        this.weatherTower = weatherTower;
         weatherTower.register(this);
     }
 
