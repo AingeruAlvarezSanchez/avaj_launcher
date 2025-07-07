@@ -25,7 +25,7 @@ public class ScenarioParser {
             List<String> lines = fileLines.toList();
             if (lines.isEmpty()) throw new IllegalArgumentException();
             simulations = Integer.parseInt(lines.getFirst());
-            if (simulations < 0) throw new IllegalArgumentException();
+            if (simulations < 0 || lines.size() == 1) throw new IllegalArgumentException();
 
             lines.stream().skip(1).map(line -> {
                 var words = line.split("\\s+");
