@@ -1,6 +1,8 @@
-package io.github.aalvarez.avaj.launcher;
+package io.github.aalvarez.avaj.launcher.aircraft;
 
 import io.github.aalvarez.avaj.launcher.exception.ScenarioFileException;
+import io.github.aalvarez.avaj.launcher.scenario.Scenario;
+import io.github.aalvarez.avaj.launcher.utils.LoggerFactory;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -47,6 +49,7 @@ public class ScenarioParser {
                     ).registerTower(weatherTower)
             );
         } catch (Exception e) {
+            System.out.println("exception: " + e);
             throw new ScenarioFileException(e, e.getClass().getSimpleName());
         }
 

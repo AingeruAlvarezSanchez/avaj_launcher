@@ -1,4 +1,4 @@
-package io.github.aalvarez.avaj.launcher;
+package io.github.aalvarez.avaj.launcher.utils;
 
 import java.util.Arrays;
 import java.util.logging.ConsoleHandler;

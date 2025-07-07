@@ -1,4 +1,4 @@
-package io.github.aalvarez.avaj.launcher;
+package io.github.aalvarez.avaj.launcher.aircraft;
 
 public class Coordinates {
     private int longitude;

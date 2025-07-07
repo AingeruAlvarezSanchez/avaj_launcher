@@ -1,6 +1,7 @@
-package io.github.aalvarez.avaj.launcher;
+package io.github.aalvarez.avaj.launcher.aircraft;
 
 import io.github.aalvarez.avaj.launcher.exception.WeatherException;
+import io.github.aalvarez.avaj.launcher.utils.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;

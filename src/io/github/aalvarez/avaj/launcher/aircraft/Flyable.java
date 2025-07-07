@@ -1,4 +1,4 @@
-package io.github.aalvarez.avaj.launcher;
+package io.github.aalvarez.avaj.launcher.aircraft;
 
 public abstract class Flyable {
     protected WeatherTower weatherTower = new WeatherTower();

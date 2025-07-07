@@ -1,5 +1,11 @@
 package io.github.aalvarez.avaj.launcher;
 
+import io.github.aalvarez.avaj.launcher.aircraft.Balloon;
+import io.github.aalvarez.avaj.launcher.aircraft.Helicopter;
+import io.github.aalvarez.avaj.launcher.aircraft.JetPlane;
+import io.github.aalvarez.avaj.launcher.aircraft.ScenarioParser;
+import io.github.aalvarez.avaj.launcher.scenario.Scenario;
+
 import java.nio.file.Path;
 import java.util.stream.IntStream;
 
